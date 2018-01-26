@@ -12,7 +12,7 @@ keywords: "python,machine learning,matlab,爬虫,读书,音乐"
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://seaworth.github.io/
+url: http://seaworth.github.io/
 root: /
 permalink: :year/:month/:day/:title/
 tag_dir: tags
@@ -92,15 +92,13 @@ exclude_generator:
 ## Docs: https://hexo.io/docs/deployment.html
 # deploy:
 #  type: git
-#  repo: git@github.com:Seaworth/Seaworth.github.com.git
+#  repo: git@github.com:Seaworth/Seaworth.github.io.git
 #  branch: master
 
 deploy:
-  type: rsync
-  host: 120.24.181.238
-  user: root
-  root: /usr/local/nginx/litten.me/
-  port: 22
+  type: git
+  repo: git@github.com:Seaworth/Seaworth.github.io.git
+  branch: master
 
 sitemap:
     path: sitemap.xml
