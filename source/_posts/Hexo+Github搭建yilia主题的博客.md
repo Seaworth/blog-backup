@@ -69,17 +69,19 @@ tz: 2017b
 $ hexo init  #将blog初始化
 ```
 hexo会自动下载一些文件到这个目录，包括node_modules，目录结构如下图：
-![enter description here][5]
+{% asset_img QQ截图20180203150040.png This is an example image %}
 ``` bash
 $ hexo g  # 也可以写成hexo generate，生成静态文件
 $ hexo s  # 也可以写成hexo server，启动服务器
 ```
 执行以上命令之后，hexo文件夹中会增加两个文件，其中一个public文件夹生成相关html文件：
-![enter description here][6]
-![enter description here][7]
-![enter description here][8]
+{% asset_img QQ截图20180202153116.png This is an example image %}
+{% asset_img QQ截图20180203151320.png This is an example image %}
+{% asset_img QQ截图20180203150931.png This is an example image %}
+
 hexo s是开启本地预览服务，打开浏览器访问 http://localhost:4000 即可看到如下页面：
-![enter description here][9]
+{% asset_img QQ截图20180203151852.png This is an example image %}
+
 第一次初始化的时候hexo已经帮我们写了一篇名为 Hello World 的文章，这是默认的主题landscape。
 ### 4 配置yilia主题
 默认主题不是很好看，我们就来换个好看点的主题，这里是[官方主题][10]
@@ -89,7 +91,8 @@ hexo s是开启本地预览服务，打开浏览器访问 http://localhost:4000 
 $ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
 ```
 下载后，themes文件夹下会多一个yilia文件夹
-![enter description here][13]
+{% asset_img QQ截图20180203154359.png This is an example image %}
+
 然后，在[yilia主题的博客备份][14]中的_config.yml配置文件中，复制里面的全部内容，粘贴到在hexo文件夹下的_config.yml文件。
 在hexo文件夹下右键打开Git Bash命令行
 ``` bash
@@ -97,7 +100,8 @@ $ hexo g
 $ hexo s
 ```
 打开浏览器访问 http://localhost:4000 ，即可看到更改为yilia主题的页面
-![enter description here][15]
+{% asset_img QQ截图20180203161438.png This is an example image %}
+
 此时就只需要更改hexo文件夹下的_config.yml配置文件和yilia文件夹下的_config.yml配置文件，yilia主题的作者[Litten][16]将配置文件的备注写的比较清楚，不过作为小白的我还是改了一些时间，也遇到一些问题，分享给大家，避免的大家也在类似的地方卡住。
 hexo文件夹下的_config.yml配置文件
 
@@ -119,7 +123,8 @@ alipay: "/img/alipay.jpg"
 此时还只能够在本地的浏览器看自己的博客，当我们把本地的hexo博客网页配置和博客文章推送到Github上，生成静态网页，所有人都可以访问博客了。
 #### 5.1 创建repository
 repository相当于一个仓库，用来放置代码文件。首先，登陆进入[Github][17]，并进入个人页面，然后New一个repository
-![enter description here][18]
+{% asset_img QQ截图20180203164834.png This is an example image %}
+
 创建时，只需要填写Repository name即可，当然这个名字的格式必须为yourname.github.io，例如我的为[Seaworth.github.io][19]
 然后编辑F:/hexo下的_config.yml文件，建议使用Notepad++编辑器。将deploy部分修改成自己的信息
 
@@ -130,7 +135,8 @@ deploy:
   branch: master
 ```
 repo后面填写以下红色方框中的内容
-![enter description here][20]
+{% asset_img QQ截图20180203170735.png This is an example image %}
+
 #### 5.2 配置SSH keys
 为什么要配置这个呢？因为你提交代码肯定要拥有你的Github权限才可以，但是直接使用用户名和密码太不安全了，所以我们使用ssh key来解决本地和服务器的连接问题。
 在Git Bash中执行如下命令：
@@ -143,9 +149,11 @@ $ cd ~/. ssh #检查本机已存在的ssh密钥
 ssh-keygen -t rsa -C "你的邮件地址"
 ```
 然后连续3次回车，最终会在C:\Users\Administrator\.ssh\目录下生成三个文件，找到id_rsa.pub文件，记事本打开并复制里面的内容
-![enter description here][21]
+{% asset_img QQ截图20180203172124.png This is an example image %}
+
 打开你的github主页，点击头像->Settings-> SSH and GPG keys -> New SSH key：
-![enter description here][22]
+{% asset_img QQ截图20180203172738.png This is an example image %}
+
 将刚复制的内容粘贴到key那里，title随便填。
 测试一下SSH是否配置成功，输入以下命令：
 ``` bash
@@ -185,15 +193,17 @@ $ hexo n "hello my first blog" # 新建一篇文章名为hello my first blog
 INFO  Created: F:\blog\source\_posts\hello-my-first-blog.md
 ```
 Hexo会帮我们在F:\blog\source\_posts下生成相关md文件，打开这个文件就可以开始写博客了，Markdown语法编写，默认生成如下内容：
-![enter description here][24]
+{% asset_img QQ截图20180203175708.png This is an example image %}
+
 在后面添加##我的第一篇博客，啦啦啦！，写完文章后，在hexo文件夹下打开Git Bash输入
 ``` bash
 $ hexo g
 $ hexo d
 ```
 然后使用 https://yourname.github.io 进行访问。
-![enter description here][25]
-到这里就差不多搭建好了一个属于自己的博客了，还有一些细节的东西（如访问统计，）可以后面慢慢完善，后面就只是发布文章了，这是我第一次写博客，有些地方可能说的不是很全面，搭建的过程中难免会遇到一些问题，在百度上搜索大部分都能够解决，只要怀着一颗折腾到底的心，相信一定能够搭建好属于自己的个人博客的！
+{% asset_img QQ截图20180203180907.png This is an example image %}
+
+到这里就差不多搭建好了一个属于自己的博客了，还有一些细节的东西（如访问统计）可以后面慢慢完善，后面就只是发布文章了，这是我第一次写博客，有些地方可能说的不是很全面，搭建的过程中难免会遇到一些问题，在百度上搜索大部分都能够解决，只要怀着一颗折腾到底的心，相信一定能够搭建好属于自己的个人博客的！
 ### 7 参考
 [使用hexo+github搭建免费个人博客详细教程][26]
 [hexo干货系列：（一）hexo+gitHub搭建个人独立博客][27]
@@ -202,26 +212,13 @@ $ hexo d
   [2]: https://seaworth.github.io/
   [3]: https://git-scm.com/download/win
   [4]: https://nodejs.org/en/
-  [5]: /img/Hexo+Github搭建yilia主题的博客/QQ截图20180203150040.png "QQ截图20180203150040"
-  [6]: /img/Hexo+Github搭建yilia主题的博客/QQ截图20180202153116.png "QQ截图20180202153116"
-  [7]: /img/Hexo+Github搭建yilia主题的博客/QQ截图20180203151320.png "QQ截图20180203151320"
-  [8]: /img/Hexo+Github搭建yilia主题的博客/QQ截图20180203150931.png "QQ截图20180203150931"
-  [9]: /img/Hexo+Github搭建yilia主题的博客/QQ截图20180203151852.png "QQ截图20180203151852"
   [10]: https://hexo.io/themes/
   [11]: https://github.com/litten/hexo-theme-yilia
   [12]: https://github.com/iissnan/hexo-theme-next
-  [13]: /img/Hexo+Github搭建yilia主题的博客/QQ截图20180203154359.png "QQ截图20180203154359"
   [14]: https://github.com/litten/BlogBackup/blob/master/_config.yml
-  [15]: /img/Hexo+Github搭建yilia主题的博客/QQ截图20180203161438.png "QQ截图20180203161438"
   [16]: http://litten.me/
   [17]: https://github.com/
-  [18]: /img/Hexo+Github搭建yilia主题的博客/QQ截图20180203164834.png "QQ截图20180203164834"
   [19]: https://github.com/Seaworth/Seaworth.github.io
-  [20]: /img/Hexo+Github搭建yilia主题的博客/QQ截图20180203170735.png "QQ截图20180203170735"
-  [21]: /img/Hexo+Github搭建yilia主题的博客/QQ截图20180203172124.png "QQ截图20180203172124"
-  [22]: /img/Hexo+Github搭建yilia主题的博客/QQ截图20180203172738.png "QQ截图20180203172738"
   [23]: http://soft.xiaoshujiang.com/
-  [24]: /img/Hexo+Github搭建yilia主题的博客/QQ截图20180203175708.png "QQ截图20180203175708"
-  [25]: /img/Hexo+Github搭建yilia主题的博客/QQ截图20180203180907.png "QQ截图20180203180907"
   [26]: http://blog.haoji.me/build-blog-website-by-hexo-github.html?from=xa
   [27]: http://tengj.top/2016/02/22/hexo1/
