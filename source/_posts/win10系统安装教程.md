@@ -21,32 +21,36 @@ tags:
   >给大家推荐一个[下载Windows系统的网址][1]，在百度上搜索win10系统下载，很多都不是微软原版的，并集成了很多常用软件或垃圾软件进去，MSDN网站里是正版纯净的Windows系统，MSDN是微软面向软件开发者所建的一个网站，它里面的资源很多，包括操作系统和Office软件。
  
 注意下载操作系统前，先查看自己的电脑是32位还是64位，下载对应的操作系统，保证系统和电脑硬件匹配以发挥最好的性能，x86对应32位，x64对应64位。
-![enter description here][2]
+
+{% asset_img 1.png This is an example image %}
+
 ### 3、制作启动盘
 打开UltraISO（俗称软碟通）软件，界面如下
-![enter description here][3]
+
+{% asset_img 2.png This is an example image %}
+
 按照截图操作即可
-![enter description here][4]
-![enter description here][5]
-![enter description here][6]
-![enter description here][7]
+- 1.打开win10镜像文件ios<br>
+{% asset_img 3.png This is an example image %}
+- 2.选中要制作启动盘的U盘<br>
+{% asset_img 4.png This is an example image %}
+- 3.启动->写入硬盘映像<br>
+{% asset_img 5.png This is an example image %}<br>
+{% asset_img 6.png This is an example image %}
+
 刻录成功后，打开资源管理器，你的U盘会变成如下样式，代表着启动盘制作成功了。
-![enter description here][8]
+
+{% asset_img 7.png This is an example image %}
+
 到这里已经成功了一半了。
 ### 4、在bios下设置U盘启动
 将制作好的U盘插入将要安装的电脑上，根据你电脑的品牌型号，在网上搜索怎样进入bios界面，设置U盘启动。我的电脑是台式惠普，开机时按住F9进入bios界面，选择启动盘SanDisk，回车进入安装界面。
-![enter description here][9]
-![enter description here][10]
+
+{% asset_img 8.png This is an example image %}
+
+{% asset_img 9.png This is an example image %}
+
 然后根据提示一路回车，你就会遇见你的win10！
 
 
   [1]: https://msdn.itellyou.cn/
-  [2]: /img/win10安装/1.png "1"
-  [3]: /img/win10安装/2.png "2"
-  [4]: /img/win10安装/3.png "3"
-  [5]: /img/win10安装/4.png "4"
-  [6]: /img/win10安装/5.png "5"
-  [7]: /img/win10安装/6.png "6"
-  [8]: /img/win10安装/7.png "7"
-  [9]: /img/win10安装/8.png "8"
-  [10]: /img/win10安装/9.jpg "9"
