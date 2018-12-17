@@ -1,6 +1,7 @@
 ---
 title: C++ day01
 date: 2018-12-16 21:37:07
+toc: true
 tags:
 	- C++
 ---
