@@ -8,6 +8,7 @@ tags:
 	- 剑指
 ---
 题目：和为S的两个数字<!-- more -->
+[在线编程][1]
 
 # 题目描述
 > 输入一个递增排序的数组和一个数字S，在数组中查找两个数，使得他们的和正好是S，如果有多对数字的和等于S，输出两个数的乘积最小的。
@@ -58,3 +59,4 @@ public:
 ```
 # 结束语
 > 青山不改，流水长流！加油吧，少年！
+[1]:https://www.nowcoder.com/practice/f78a359491e64a50bce2d89cff857eb6?tpId=13&tqId=11199&tPage=3&rp=3&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking
