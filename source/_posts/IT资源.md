@@ -1,5 +1,5 @@
 ---
-title: IT资源
+title: IT资源 持续更新
 date: 2019-03-09 14:46:03
 toc: true
 tags:
@@ -29,6 +29,12 @@ tags:
 > the first website in the world to provide mass & public access to research papers.
 ...to remove all barriers in the way of science.
 
+- [bookset精品电子书免费下载][6]
+
+{% asset_img 6.png 精品电子书免费下载 %}
+
+平常看的电子书，在网站上都能下载到，相当nice。
+
 
 # 3 软件工具
 - [MSDN,我告诉你][4]
@@ -49,3 +55,4 @@ Windows系统，Office等办公软件下载，**本站资源均来自于官方�
 [3]:https://sci-hub.tw/
 [4]:https://msdn.itellyou.cn/
 [5]:https://www.ghpym.com/
+[6]:https://bookset.me/
