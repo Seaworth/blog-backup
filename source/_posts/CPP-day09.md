@@ -19,7 +19,9 @@ tags:
 
 命名的强制类型转换
 转换的形式如下：
-*cast-name<type>(expression);*
+```
+cast-name<type>(expression);
+```
 其中，*type*是装换的目标类型，*expression*是要转换的值。*cast-name*是**static_cast**，**dynamic_cast**，**const_cast**，**reinterpret_cast**中的一种。*cast-name*指定了执行的是哪种转换。
 
 **静态转换static_cast**
