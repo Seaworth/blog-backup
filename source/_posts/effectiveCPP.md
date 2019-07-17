@@ -226,6 +226,17 @@ processWidget(pw, priority() );//这个调用不会造成资源泄漏
 - 你的新type有多么一般化？
 - 你真的需要一个新的type么？
 
+# 条款20：以pass-by-reference-to-const替换pass-by-value
+- 尽量以pass-by-reference-to-const替换pass-by-value。前者通常比较高效，并可以避免切割问题。
+- 以上规则并不适用于内置类型，以及STL的迭代器和函数对象。对他们而言，pass-by-value往往比较适合。
+
+# 条款21：必须返回对象时，别妄想返回其reference
+绝不要返回pointer或reference指向一个local stack对象，或返回一个reference指向一个heap-allocated对象，或返回pointer或reference指向一个local static对象而有可能同时需要多个这样的对象。条款4已经为“在单线程环境中合理返回reference指向一个local static对象”提供了一份设计实例。
+
+# 条款22：将成员变量声明为private
+- 切记将成员变量声明为private。这可以赋予客户访问数据的一致性、可细微划分访问控制、允诺约束条件获得保证，并提供class作者以充分的实现弹性。
+- protected并不比public更具封装性。private（提供封装）和其他（不提供封装）。
+
 
 
 
