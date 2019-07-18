@@ -237,6 +237,10 @@ processWidget(pw, priority() );//这个调用不会造成资源泄漏
 - 切记将成员变量声明为private。这可以赋予客户访问数据的一致性、可细微划分访问控制、允诺约束条件获得保证，并提供class作者以充分的实现弹性。
 - protected并不比public更具封装性。private（提供封装）和其他（不提供封装）。
 
+# 条款23：宁以non-member、non-friend替换member函数
+这样做可以增加封装性、包裹弹性和扩展性
+
+# 条款24：若所有参数皆要类型转换，请为此采用non-member函数
 
 
 
