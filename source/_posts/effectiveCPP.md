@@ -242,6 +242,60 @@ processWidget(pw, priority() );//这个调用不会造成资源泄漏
 
 # 条款24：若所有参数皆要类型转换，请为此采用non-member函数
 
+# 条款25：考虑写出一个不抛出异常的swap函数
+> swap置换两对象值，意思是将两对象的值彼此赋予对方。
+
+```C++
+namespace std {
+    template <typename T>
+    void swap(T& a, T& b)
+    {
+        T temp(a);
+        a=b;
+        b=a;
+    }
+}
+```
+```C++
+class WidgetImpl{...};
+
+class Widget{
+    public:
+        Widget(const Widget& rhs);
+        Widget& operator=(const Widget& rhs)
+        {
+            *pImpl = *(rhs.pImpl);
+        }
+    private:
+        WidgetImpl* pImpl;
+};
+```
+当要置换两个Widget对象时，需要做的是置换其成员变量pImpl指针，但swap算法不知道。它只是简单的复制，非常缺乏效率。此时要将std::swap针对Widget特化。
+我们先在Widget中声明一个名为swap的public成员函数做真正的置换工作，然后再将std::swap特化。
+```C++
+class Widget{
+public:
+    //...
+    void swap(Widget& other)
+    {
+        using std::swap;
+        swap(pImp, other.pImp);
+    }    
+}
+//std::swap特化版本
+namespace std{
+    template<>
+    void swap<Widget>(Widget& a, Widget& b)
+    {
+        a.swap(b);
+    }
+}
+```
+
+# 条款26：尽可能延后变量定义式的出现时间
+> 因为只要定义了一个变量，其类型就带有一个构造函数和析构函数，当程序的控制流到达这个变量定义式时，就得承受构造成本，当这个变量离开作用域的时候，就得承受析构成本。即便这个变量没有使用，仍然需要耗费这些成本。
+
+
 
 
 
