@@ -130,3 +130,6 @@ jsonContent:
     categories: false
     tags: true
     
+
+#rss
+  plugins: hexo-generater-feed
